@@ -39,9 +39,13 @@
             this.Label_Speed = new System.Windows.Forms.Label();
             this.cbSpeed = new System.Windows.Forms.ComboBox();
             this.gbMLX90614 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelUnitsObject2 = new System.Windows.Forms.Label();
+            this.labelUnitsObject1 = new System.Windows.Forms.Label();
+            this.labelUnitsAmbient = new System.Windows.Forms.Label();
+            this.lIDNumber = new System.Windows.Forms.Label();
+            this.llabelNameObject2 = new System.Windows.Forms.Label();
+            this.lableNameObject1 = new System.Windows.Forms.Label();
+            this.lableNameAmbient = new System.Windows.Forms.Label();
             this.labelTempObj2 = new System.Windows.Forms.Label();
             this.labelTempObj1 = new System.Windows.Forms.Label();
             this.labelTempAmb = new System.Windows.Forms.Label();
@@ -134,9 +138,13 @@
             // 
             // gbMLX90614
             // 
-            this.gbMLX90614.Controls.Add(this.label3);
-            this.gbMLX90614.Controls.Add(this.label2);
-            this.gbMLX90614.Controls.Add(this.label1);
+            this.gbMLX90614.Controls.Add(this.labelUnitsObject2);
+            this.gbMLX90614.Controls.Add(this.labelUnitsObject1);
+            this.gbMLX90614.Controls.Add(this.labelUnitsAmbient);
+            this.gbMLX90614.Controls.Add(this.lIDNumber);
+            this.gbMLX90614.Controls.Add(this.llabelNameObject2);
+            this.gbMLX90614.Controls.Add(this.lableNameObject1);
+            this.gbMLX90614.Controls.Add(this.lableNameAmbient);
             this.gbMLX90614.Controls.Add(this.labelTempObj2);
             this.gbMLX90614.Controls.Add(this.labelTempObj1);
             this.gbMLX90614.Controls.Add(this.labelTempAmb);
@@ -147,38 +155,75 @@
             this.gbMLX90614.TabStop = false;
             this.gbMLX90614.Text = "MLX90614 Infra Red Thermometer";
             // 
-            // label3
+            // labelUnitsObject2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 208);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Object 2";
+            this.labelUnitsObject2.AutoSize = true;
+            this.labelUnitsObject2.Location = new System.Drawing.Point(340, 210);
+            this.labelUnitsObject2.Name = "labelUnitsObject2";
+            this.labelUnitsObject2.Size = new System.Drawing.Size(36, 15);
+            this.labelUnitsObject2.TabIndex = 10;
+            this.labelUnitsObject2.Text = "DegC";
             // 
-            // label2
+            // labelUnitsObject1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Object 1";
+            this.labelUnitsObject1.AutoSize = true;
+            this.labelUnitsObject1.Location = new System.Drawing.Point(340, 163);
+            this.labelUnitsObject1.Name = "labelUnitsObject1";
+            this.labelUnitsObject1.Size = new System.Drawing.Size(36, 15);
+            this.labelUnitsObject1.TabIndex = 9;
+            this.labelUnitsObject1.Text = "DegC";
             // 
-            // label1
+            // labelUnitsAmbient
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Ambient";
+            this.labelUnitsAmbient.AutoSize = true;
+            this.labelUnitsAmbient.Location = new System.Drawing.Point(340, 116);
+            this.labelUnitsAmbient.Name = "labelUnitsAmbient";
+            this.labelUnitsAmbient.Size = new System.Drawing.Size(36, 15);
+            this.labelUnitsAmbient.TabIndex = 8;
+            this.labelUnitsAmbient.Text = "DegC";
+            // 
+            // lIDNumber
+            // 
+            this.lIDNumber.Location = new System.Drawing.Point(341, 293);
+            this.lIDNumber.Name = "lIDNumber";
+            this.lIDNumber.Size = new System.Drawing.Size(236, 15);
+            this.lIDNumber.TabIndex = 7;
+            this.lIDNumber.Text = "lIDNumber";
+            this.lIDNumber.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lIDNumber.Visible = false;
+            // 
+            // llabelNameObject2
+            // 
+            this.llabelNameObject2.AutoSize = true;
+            this.llabelNameObject2.Location = new System.Drawing.Point(187, 203);
+            this.llabelNameObject2.Name = "llabelNameObject2";
+            this.llabelNameObject2.Size = new System.Drawing.Size(51, 15);
+            this.llabelNameObject2.TabIndex = 1;
+            this.llabelNameObject2.Text = "Object 2";
+            // 
+            // lableNameObject1
+            // 
+            this.lableNameObject1.AutoSize = true;
+            this.lableNameObject1.Location = new System.Drawing.Point(187, 156);
+            this.lableNameObject1.Name = "lableNameObject1";
+            this.lableNameObject1.Size = new System.Drawing.Size(51, 15);
+            this.lableNameObject1.TabIndex = 2;
+            this.lableNameObject1.Text = "Object 1";
+            // 
+            // lableNameAmbient
+            // 
+            this.lableNameAmbient.AutoSize = true;
+            this.lableNameAmbient.Location = new System.Drawing.Point(187, 108);
+            this.lableNameAmbient.Name = "lableNameAmbient";
+            this.lableNameAmbient.Size = new System.Drawing.Size(53, 15);
+            this.lableNameAmbient.TabIndex = 3;
+            this.lableNameAmbient.Text = "Ambient";
             // 
             // labelTempObj2
             // 
             this.labelTempObj2.AutoSize = true;
             this.labelTempObj2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTempObj2.Location = new System.Drawing.Point(264, 189);
+            this.labelTempObj2.Location = new System.Drawing.Point(246, 184);
             this.labelTempObj2.Name = "labelTempObj2";
             this.labelTempObj2.Size = new System.Drawing.Size(104, 47);
             this.labelTempObj2.TabIndex = 4;
@@ -188,7 +233,7 @@
             // 
             this.labelTempObj1.AutoSize = true;
             this.labelTempObj1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTempObj1.Location = new System.Drawing.Point(264, 142);
+            this.labelTempObj1.Location = new System.Drawing.Point(246, 137);
             this.labelTempObj1.Name = "labelTempObj1";
             this.labelTempObj1.Size = new System.Drawing.Size(104, 47);
             this.labelTempObj1.TabIndex = 5;
@@ -198,7 +243,7 @@
             // 
             this.labelTempAmb.AutoSize = true;
             this.labelTempAmb.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTempAmb.Location = new System.Drawing.Point(264, 95);
+            this.labelTempAmb.Location = new System.Drawing.Point(246, 90);
             this.labelTempAmb.Name = "labelTempAmb";
             this.labelTempAmb.Size = new System.Drawing.Size(104, 47);
             this.labelTempAmb.TabIndex = 6;
@@ -237,11 +282,15 @@
         private Label Label_Speed;
         private ComboBox cbSpeed;
         private GroupBox gbMLX90614;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label llabelNameObject2;
+        private Label lableNameObject1;
+        private Label lableNameAmbient;
         private Label labelTempObj2;
         private Label labelTempObj1;
         private Label labelTempAmb;
+        private Label lIDNumber;
+        private Label labelUnitsObject2;
+        private Label labelUnitsObject1;
+        private Label labelUnitsAmbient;
     }
 }

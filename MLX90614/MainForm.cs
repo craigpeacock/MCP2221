@@ -30,7 +30,6 @@ namespace TestApp1
         private void GetMCP2221Devices()
         {
             uint numberOfDevices = 0;
-            uint mcpIndex = 0;
 
             String libVersion = MCP2221.M_Mcp2221_GetLibraryVersion();
 
@@ -103,12 +102,35 @@ namespace TestApp1
             i2cTxData[0] = Command;     
             result = MCP2221.M_Mcp2221_I2cWriteNoStop(mcpHandle, bytesToWrite, slaveAddress, 1, i2cTxData);
 
-            const int bytesToRead = 2;
+            const int bytesToRead = 3;
             byte[] i2cRxData = new byte[bytesToRead];
             result = MCP2221.M_Mcp2221_I2cReadRestart(mcpHandle, bytesToRead, slaveAddress, 1, i2cRxData);
 
             int value = (i2cRxData[1] << 8) + i2cRxData[0];
             return(value);
+        }
+
+        private void GetIDNumber(IntPtr mcpHandle)
+        {
+            ushort[] Id_Number = new ushort[4];
+
+            for (byte i = 0; i < 4; i++)
+            {
+                const int slaveAddress = 0x5A;
+                const int bytesToWrite = 1;
+                byte[] i2cTxData = new byte[bytesToWrite];
+                i2cTxData[0] = (byte)(0x2C + i);
+                result = MCP2221.M_Mcp2221_I2cWriteNoStop(mcpHandle, bytesToWrite, slaveAddress, 1, i2cTxData);
+
+                const int bytesToRead = 3;
+                byte[] i2cRxData = new byte[bytesToRead];
+                result = MCP2221.M_Mcp2221_I2cReadRestart(mcpHandle, bytesToRead, slaveAddress, 1, i2cRxData);
+
+                Id_Number[i] = (ushort)((i2cRxData[1] << 8) + i2cRxData[0]);
+            }
+
+            lIDNumber.Text = "ID Number: " + Id_Number[0].ToString("X4") + "-" + Id_Number[1].ToString("X4") + "-" + Id_Number[2].ToString("X4") + "-" + Id_Number[3].ToString("X4");
+            lIDNumber.Visible = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -146,11 +168,19 @@ namespace TestApp1
                 
                 timer1.Enabled = true;
                 bConnect.Text = "Disconnect";
+
+                GetIDNumber(mcpHandle);
             } 
             else
             {
                 timer1.Enabled = false;
                 bConnect.Text = "Connect";
+
+                result = MCP2221.M_Mcp2221_Close(mcpHandle);
+                if (result > 0)
+                {
+                    statusStrip1.Items[0].Text = "Error closing handle during device enumeration";
+                }
             }
         }
     }
