@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="mcp2221_dll_m_dotnetv4_x64">
+      <HintPath>MCP2221DLL-M-dotNet4\x64\mcp2221_dll_m_dotnetv4_x64.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="mcp2221_dll_m_dotnetv4_x86.dll">
+      <CustomToolNamespace>MCP2221</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+
+</Project>
